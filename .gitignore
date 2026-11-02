@@ -1,0 +1,14 @@
+# Node
+node_modules/
+build/
+.env.local
+
+# .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# Secrets
+appsettings.Production.json
