@@ -1,0 +1,61 @@
+/* Logo container */
+.shopkart-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-decoration: none;
+  line-height: 0;
+  overflow: hidden;
+}
+
+/* Blend the image background with the navbar */
+.shopkart-logo-image {
+  display: block;
+  width: 112px;
+  height: 64px;
+  padding: 0;
+  margin: 0;
+  object-fit: contain;
+  object-position: center;
+  border: none;
+  background: transparent;
+
+  /* Helps a light image background blend into a light navbar */
+  mix-blend-mode: multiply;
+
+  transition: opacity 0.2s ease;
+}
+
+.shopkart-logo-link:hover .shopkart-logo-image {
+  opacity: 0.9;
+}
+
+/* For dark backgrounds, disable the blending mode */
+.shopkart-logo-light .shopkart-logo-image {
+  mix-blend-mode: normal;
+}
+
+/* Footer logo */
+.shopkart-logo-footer .shopkart-logo-image {
+  width: 150px;
+  height: 95px;
+}
+
+/* Responsive sizing */
+@media (max-width: 600px) {
+  .shopkart-logo-image {
+    width: 88px;
+    height: 52px;
+  }
+
+  .shopkart-logo-footer .shopkart-logo-image {
+    width: 125px;
+    height: 82px;
+  }
+}

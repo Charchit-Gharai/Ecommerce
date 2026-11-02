@@ -1,0 +1,230 @@
+.location-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.location-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid #e6e1d5;
+  border-radius: 10px;
+  background: #fffdf8;
+  color: #56623e;
+  cursor: pointer;
+  text-align: left;
+}
+
+.location-trigger:hover {
+  background: #f3f1e8;
+}
+
+.location-trigger-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.location-trigger-text small {
+  color: #77786e;
+  font-size: 11px;
+}
+
+.location-trigger-text strong {
+  max-width: 130px;
+  overflow: hidden;
+  color: #33372b;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.location-popup {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 1002;
+  width: 360px; /* Increased from 340px */
+  padding: 24px; /* Increased from 20px */
+  border: 1px solid #e7e2d7;
+  border-radius: 14px;
+  background: #fffdf8;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.location-popup-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px; /* Increased from 18px */
+}
+
+/* Scaled up heading font size */
+.location-popup-header h3 {
+  margin: 0 0 6px;
+  color: #303428;
+  font-size: 19px; /* Increased from 17px */
+}
+
+/* Scaled up paragraph font size */
+.location-popup-header p {
+  margin: 0;
+  color: #77786e;
+  font-size: 13px; /* Increased from 12px */
+  line-height: 1.5;
+}
+
+.location-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: none;
+  background: transparent;
+  color: #55584d;
+  cursor: pointer;
+}
+
+/* Enlarged the primary button */
+.detect-location-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  padding: 14px; /* Increased from 12px */
+  border: 1px solid #66734b;
+  border-radius: 9px;
+  background: #66734b;
+  color: white;
+  font-size: 14px; /* Increased from 13px */
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.detect-location-button:hover {
+  background: #505c38;
+}
+
+.detect-location-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.location-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0 14px; /* Adjusted margins */
+  color: #88897e;
+  font-size: 11px; /* Increased from 10px */
+  letter-spacing: 0.6px;
+}
+
+.location-divider::before,
+.location-divider::after {
+  flex: 1;
+  height: 1px;
+  background: #e8e4da;
+  content: "";
+}
+
+.location-pin-form {
+  display: flex;
+  gap: 8px;
+}
+
+/* Enlarged input field */
+.location-pin-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px; /* Increased from 11px */
+  border: 1px solid #dedacf;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  color: #303428;
+  font-size: 14px; /* Increased from 13px */
+}
+
+.location-pin-form input:focus {
+  border-color: #66734b;
+}
+
+/* Enlarged form action button */
+.location-pin-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px; /* Increased from 42px */
+  border: none;
+  border-radius: 8px;
+  background: #66734b;
+  color: white;
+  cursor: pointer;
+}
+
+.location-pin-form button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.location-error {
+  margin: 12px 0 0;
+  color: #b42318;
+  font-size: 13px; /* Increased from 12px */
+  line-height: 1.5;
+}
+
+.location-current {
+  margin: 14px 0 0;
+  color: #4b543b;
+  font-size: 13px; /* Increased from 12px */
+}
+
+.location-note {
+  margin: 14px 0 0;
+  color: #858579;
+  font-size: 12px; /* Increased from 11px */
+  line-height: 1.5;
+}
+
+.location-spinner {
+  animation: location-spin 1s linear infinite;
+}
+
+.location-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  border: none;
+  background: transparent;
+}
+
+@keyframes location-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .location-popup {
+    position: fixed;
+    top: 75px;
+    right: 12px;
+    width: calc(100vw - 24px);
+    max-width: 360px; /* Increased from 340px to match new size */
+  }
+  .location-trigger {
+    gap: 5px;
+    padding: 7px;
+  }
+  .location-trigger-text strong {
+    max-width: 90px;
+  }
+}
